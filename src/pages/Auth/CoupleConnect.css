@@ -1,0 +1,164 @@
+.couple-connect-page {
+    padding: var(--space-6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.connect-content {
+    width: 100%;
+    max-width: 400px;
+}
+
+.connect-header {
+    text-align: center;
+    margin-bottom: var(--space-8);
+}
+
+.connect-title {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-3);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.connect-description {
+    color: var(--color-gray-600);
+    font-size: var(--text-base);
+}
+
+.connect-options {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+}
+
+.connect-option-card {
+    background: var(--color-white);
+    border: 2px solid var(--color-gray-200);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-6);
+    text-align: center;
+    transition: all var(--transition-base);
+    cursor: pointer;
+}
+
+.connect-option-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.option-icon {
+    font-size: 48px;
+    margin-bottom: var(--space-3);
+}
+
+.connect-option-card h3 {
+    font-size: var(--text-xl);
+    color: var(--color-gray-900);
+    margin-bottom: var(--space-2);
+}
+
+.connect-option-card p {
+    font-size: var(--text-sm);
+    color: var(--color-gray-600);
+}
+
+.connect-mode {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.code-display {
+    text-align: center;
+    margin-bottom: var(--space-4);
+}
+
+.code-label {
+    font-size: var(--text-sm);
+    color: var(--color-gray-600);
+    margin-bottom: var(--space-3);
+}
+
+.code-box {
+    background: var(--gradient-soft);
+    border: 2px dashed var(--color-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    margin-bottom: var(--space-4);
+}
+
+.code-text {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    letter-spacing: 4px;
+    color: var(--color-primary);
+}
+
+.share-instructions {
+    background: var(--color-gray-50);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    margin-bottom: var(--space-4);
+}
+
+.share-instructions p {
+    font-size: var(--text-sm);
+    color: var(--color-gray-700);
+    margin-bottom: var(--space-2);
+}
+
+.share-instructions p:last-child {
+    margin-bottom: 0;
+}
+
+/* Success Animation */
+.connect-success {
+    text-align: center;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.success-animation {
+    margin-bottom: var(--space-6);
+}
+
+.heart-icon {
+    font-size: 120px;
+    animation: heartbeat 1s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.1);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    75% {
+        transform: scale(1.15);
+    }
+}
+
+.success-title {
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-3);
+}
+
+.success-message {
+    font-size: var(--text-lg);
+    color: var(--color-gray-600);
+}

@@ -1,0 +1,74 @@
+.banyeomong-avatar {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.banyeomong-character {
+    position: relative;
+    z-index: 2;
+}
+
+.banyeomong-animate .banyeomong-character {
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Sizes */
+.banyeomong-small .banyeomong-emoji {
+    font-size: 40px;
+}
+
+.banyeomong-medium .banyeomong-emoji {
+    font-size: 80px;
+}
+
+.banyeomong-large .banyeomong-emoji {
+    font-size: 120px;
+}
+
+/* Shadow */
+.banyeomong-shadow {
+    width: 60%;
+    height: 12px;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 50%;
+    filter: blur(4px);
+    margin-top: var(--space-2);
+}
+
+.banyeomong-animate .banyeomong-shadow {
+    animation: shadowPulse 2s ease-in-out infinite;
+}
+
+@keyframes shadowPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(0.8);
+        opacity: 0.6;
+    }
+}
+
+.banyeomong-emoji {
+    display: inline-block;
+    user-select: none;
+}
