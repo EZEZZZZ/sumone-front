@@ -1,11 +1,11 @@
 .profile-page {
     padding-bottom: calc(var(--bottom-nav-height) + var(--space-4));
-    background: var(--gradient-soft);
+    background: #F5F5F5;
     min-height: 100vh;
 }
 
 .profile-header {
-    background: var(--gradient-primary);
+    background: transparent;
     padding: var(--space-6) var(--space-4);
     display: flex;
     justify-content: space-between;
@@ -13,8 +13,10 @@
 }
 
 .profile-header h1 {
-    font-size: var(--text-3xl);
-    color: var(--color-white);
+    font-family: 'Brush Script MT', cursive, var(--font-family-primary);
+    font-size: 40px;
+    font-weight: normal;
+    color: var(--color-gray-800);
 }
 
 .settings-btn {

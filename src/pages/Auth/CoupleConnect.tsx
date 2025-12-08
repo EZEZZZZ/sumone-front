@@ -47,7 +47,7 @@ const CoupleConnect: React.FC = () => {
         <div className="couple-connect-page page-container">
             <div className="connect-content">
                 <div className="connect-header">
-                    <h1 className="connect-title">연인과 연결하기</h1>
+                    <h1 className="connect-title">Connect</h1>
                     <p className="connect-description">
                         초대 코드를 공유하거나 받은 코드를 입력하세요
                     </p>

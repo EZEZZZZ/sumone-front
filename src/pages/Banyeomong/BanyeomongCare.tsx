@@ -19,7 +19,7 @@ const BanyeomongCare: React.FC = () => {
     return (
         <div className="banyeomong-care-page page-container">
             <div className="care-header">
-                <h1>{banyeomong.name} 돌보기</h1>
+                <h1>Banyeomong Care</h1>
             </div>
 
             <div className="care-content">

@@ -21,7 +21,7 @@ const Profile: React.FC = () => {
     return (
         <div className="profile-page page-container">
             <div className="profile-header">
-                <h1>우리의 프로필</h1>
+                <h1>Our Profile</h1>
                 <button className="settings-btn" onClick={handleSettings}>
                     ⚙️
                 </button>

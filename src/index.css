@@ -34,7 +34,7 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  background: var(--gradient-soft);
+  background: #F5F5F5;
 }
 
 /* Typography */
@@ -136,7 +136,7 @@ textarea:focus {
   width: 100%;
   max-width: var(--container-max-width);
   min-height: 100vh;
-  background: var(--color-white);
+  background: #F5F5F5;
   box-shadow: var(--shadow-xl);
   position: relative;
 }
