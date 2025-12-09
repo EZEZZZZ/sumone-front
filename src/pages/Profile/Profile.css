@@ -1,6 +1,6 @@
 .profile-page {
     padding-bottom: calc(var(--bottom-nav-height) + var(--space-4));
-    background: #F5F5F5;
+    background-color: #F5F1E8;
     min-height: 100vh;
 }
 
@@ -13,7 +13,7 @@
 }
 
 .profile-header h1 {
-    font-family: 'Brush Script MT', cursive, var(--font-family-primary);
+    font-family: var(--font-family-handwriting);
     font-size: 40px;
     font-weight: normal;
     color: var(--color-gray-800);
@@ -39,7 +39,6 @@
     padding: var(--space-6);
     text-align: center;
     margin-bottom: var(--space-6);
-    box-shadow: var(--shadow-md);
 }
 
 .couple-avatars {
@@ -61,7 +60,6 @@
     font-size: var(--text-3xl);
     font-weight: var(--font-bold);
     color: var(--color-white);
-    box-shadow: var(--shadow-pink);
 }
 
 .heart-connector {
@@ -121,13 +119,11 @@
     border-radius: var(--radius-xl);
     padding: var(--space-5);
     text-align: center;
-    box-shadow: var(--shadow-sm);
     transition: all var(--transition-fast);
 }
 
 .stat-item:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
 }
 
 .stat-icon-large {
@@ -160,7 +156,6 @@
     display: flex;
     align-items: center;
     gap: var(--space-4);
-    box-shadow: var(--shadow-sm);
 }
 
 .date-icon {
@@ -206,12 +201,10 @@
 .premium-btn {
     background: var(--gradient-primary);
     color: var(--color-white);
-    box-shadow: var(--shadow-pink);
 }
 
 .premium-btn:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
 }
 
 .btn-icon {

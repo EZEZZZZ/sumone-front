@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     padding: var(--space-6);
-    background: #F5F5F5;
+    background-color: #F5F1E8;
     position: relative;
 }
 
@@ -52,7 +52,6 @@
     align-items: center;
     justify-content: center;
     margin-bottom: var(--space-8);
-    box-shadow: var(--shadow-pink);
     animation: pulse 2s ease-in-out infinite;
 }
 

@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Onboarding from './pages/Onboarding/Onboarding';
 import Login from './pages/Auth/Login';
-import Signup from './pages/Auth/Signup';
 import CoupleConnect from './pages/Auth/CoupleConnect';
 import Home from './pages/Home/Home';
 import QuestionAnswer from './pages/Question/QuestionAnswer';
@@ -18,7 +17,6 @@ function App() {
         {/* Onboarding & Auth Routes */}
         <Route path="/" element={<Onboarding />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
         <Route path="/couple-connect" element={<CoupleConnect />} />
 
         {/* Main App Routes */}

@@ -1,6 +1,6 @@
 .history-page {
     padding-bottom: calc(var(--bottom-nav-height) + var(--space-4));
-    background: #F5F5F5;
+    background-color: #F5F1E8;
     min-height: 100vh;
 }
 

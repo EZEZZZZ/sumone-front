@@ -4,7 +4,7 @@
     justify-content: center;
     padding: var(--space-6);
     min-height: 100vh;
-    background: #F5F5F5;
+    background-color: #F5F1E8;
 }
 
 .auth-content {
@@ -107,7 +107,6 @@
 
 .social-btn:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
 }
 
 .social-btn.kakao {

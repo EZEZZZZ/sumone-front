@@ -49,23 +49,19 @@
 .btn-primary {
     background: var(--color-primary);
     color: var(--color-white);
-    box-shadow: var(--shadow-pink);
 }
 
 .btn-primary:hover:not(:disabled) {
     background: var(--color-primary-dark);
-    box-shadow: var(--shadow-lg);
 }
 
 .btn-secondary {
     background: var(--color-secondary);
     color: var(--color-white);
-    box-shadow: var(--shadow-purple);
 }
 
 .btn-secondary:hover:not(:disabled) {
     background: var(--color-secondary-dark);
-    box-shadow: var(--shadow-lg);
 }
 
 .btn-ghost {
@@ -82,11 +78,9 @@
 .btn-gradient {
     background: var(--gradient-primary);
     color: var(--color-white);
-    box-shadow: var(--shadow-lg);
 }
 
 .btn-gradient:hover:not(:disabled) {
-    box-shadow: var(--shadow-xl);
     transform: translateY(-2px);
 }
 

@@ -1,21 +1,21 @@
 /* Design Tokens - SumOne Couple App */
 
 :root {
-  /* Primary Colors - Soft Pastels */
-  --color-primary: #FF6B9D;
-  --color-primary-light: #FFB3D9;
-  --color-primary-dark: #E5527D;
-  
-  /* Secondary Colors - Purple Tones */
-  --color-secondary: #C77DFF;
-  --color-secondary-light: #E0AAFF;
-  --color-secondary-dark: #9D4EDD;
-  
+  /* Primary Colors - Light Brown/Beige */
+  --color-primary: #BC8F6A;
+  --color-primary-light: #D4B59E;
+  --color-primary-dark: #444444;
+
+  /* Secondary Colors - Warm Tones */
+  --color-secondary: #C9A882;
+  --color-secondary-light: #E3D5C3;
+  --color-secondary-dark: #9B7E5A;
+
   /* Accent Colors */
-  --color-accent-pink: #FFC2D1;
-  --color-accent-lavender: #DFD3F7;
-  --color-accent-peach: #FFD4C4;
-  
+  --color-accent-beige: #EDE4D8;
+  --color-accent-tan: #D2C2B0;
+  --color-accent-cream: #F5F1E8;
+
   /* Neutrals */
   --color-white: #FFFFFF;
   --color-gray-50: #FAFAFA;
@@ -29,81 +29,107 @@
   --color-gray-800: #424242;
   --color-gray-900: #212121;
   --color-black: #000000;
-  
+
   /* Semantic Colors */
   --color-success: #10B981;
   --color-error: #EF4444;
   --color-warning: #F59E0B;
   --color-info: #3B82F6;
-  
+
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #FF6B9D 0%, #C77DFF 100%);
-  --gradient-secondary: linear-gradient(135deg, #FFB3D9 0%, #E0AAFF 100%);
-  --gradient-soft: linear-gradient(180deg, #FFF5F8 0%, #F8F0FF 100%);
+  --gradient-primary: linear-gradient(135deg, #BC8F6A 0%, #C9A882 100%);
+  --gradient-secondary: linear-gradient(135deg, #D4B59E 0%, #E3D5C3 100%);
+  --gradient-soft: linear-gradient(180deg, #F5F1E8 0%, #EDE4D8 100%);
   --gradient-card: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 100%);
-  
+
   /* Typography */
   --font-family-primary: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
   --font-family-secondary: 'Noto Sans KR', sans-serif;
-  
+  --font-family-handwriting: 'Pacifico', 'Dancing Script', cursive;
+
   /* Font Sizes */
-  --text-xs: 0.75rem;     /* 12px */
-  --text-sm: 0.875rem;    /* 14px */
-  --text-base: 1rem;      /* 16px */
-  --text-lg: 1.125rem;    /* 18px */
-  --text-xl: 1.25rem;     /* 20px */
-  --text-2xl: 1.5rem;     /* 24px */
-  --text-3xl: 1.875rem;   /* 30px */
-  --text-4xl: 2.25rem;    /* 36px */
-  --text-5xl: 3rem;       /* 48px */
-  
+  --text-xs: 0.75rem;
+  /* 12px */
+  --text-sm: 0.875rem;
+  /* 14px */
+  --text-base: 1rem;
+  /* 16px */
+  --text-lg: 1.125rem;
+  /* 18px */
+  --text-xl: 1.25rem;
+  /* 20px */
+  --text-2xl: 1.5rem;
+  /* 24px */
+  --text-3xl: 1.875rem;
+  /* 30px */
+  --text-4xl: 2.25rem;
+  /* 36px */
+  --text-5xl: 3rem;
+  /* 48px */
+
   /* Font Weights */
   --font-normal: 400;
   --font-medium: 500;
   --font-semibold: 600;
   --font-bold: 700;
   --font-extrabold: 800;
-  
+
   /* Line Heights */
   --leading-tight: 1.25;
   --leading-normal: 1.5;
   --leading-relaxed: 1.75;
-  
+
   /* Spacing */
-  --space-1: 0.25rem;   /* 4px */
-  --space-2: 0.5rem;    /* 8px */
-  --space-3: 0.75rem;   /* 12px */
-  --space-4: 1rem;      /* 16px */
-  --space-5: 1.25rem;   /* 20px */
-  --space-6: 1.5rem;    /* 24px */
-  --space-8: 2rem;      /* 32px */
-  --space-10: 2.5rem;   /* 40px */
-  --space-12: 3rem;     /* 48px */
-  --space-16: 4rem;     /* 64px */
-  --space-20: 5rem;     /* 80px */
-  
+  --space-1: 0.25rem;
+  /* 4px */
+  --space-2: 0.5rem;
+  /* 8px */
+  --space-3: 0.75rem;
+  /* 12px */
+  --space-4: 1rem;
+  /* 16px */
+  --space-5: 1.25rem;
+  /* 20px */
+  --space-6: 1.5rem;
+  /* 24px */
+  --space-8: 2rem;
+  /* 32px */
+  --space-10: 2.5rem;
+  /* 40px */
+  --space-12: 3rem;
+  /* 48px */
+  --space-16: 4rem;
+  /* 64px */
+  --space-20: 5rem;
+  /* 80px */
+
   /* Border Radius */
-  --radius-sm: 0.375rem;   /* 6px */
-  --radius-md: 0.5rem;     /* 8px */
-  --radius-lg: 0.75rem;    /* 12px */
-  --radius-xl: 1rem;       /* 16px */
-  --radius-2xl: 1.5rem;    /* 24px */
+  --radius-sm: 0.375rem;
+  /* 6px */
+  --radius-md: 0.5rem;
+  /* 8px */
+  --radius-lg: 0.75rem;
+  /* 12px */
+  --radius-xl: 1rem;
+  /* 16px */
+  --radius-2xl: 1.5rem;
+  /* 24px */
   --radius-full: 9999px;
-  
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  --shadow-pink: 0 10px 30px -5px rgba(255, 107, 157, 0.3);
-  --shadow-purple: 0 10px 30px -5px rgba(199, 125, 255, 0.3);
-  
+
+  /* Shadows - Disabled for minimal aesthetic */
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --shadow-xl: none;
+  --shadow-2xl: none;
+  --shadow-pink: none;
+  --shadow-purple: none;
+
   /* Transitions */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
-  
+
   /* Z-Index */
   --z-base: 1;
   --z-dropdown: 1000;
@@ -113,11 +139,11 @@
   --z-modal: 1050;
   --z-popover: 1060;
   --z-tooltip: 1070;
-  
+
   /* Container */
   --container-max-width: 480px;
   --container-padding: var(--space-4);
-  
+
   /* Bottom Navigation */
   --bottom-nav-height: 70px;
 }

@@ -1,6 +1,6 @@
 .home-page {
     padding-bottom: calc(var(--bottom-nav-height) + var(--space-4));
-    background: #F5F5F5;
+    background-color: #F5F1E8;
 }
 
 .home-header {
@@ -28,7 +28,6 @@
     font-weight: var(--font-bold);
     color: var(--color-primary);
     border: 3px solid var(--color-white);
-    box-shadow: var(--shadow-md);
 }
 
 .dday-counter {
@@ -64,7 +63,6 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    box-shadow: var(--shadow-sm);
     border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
@@ -192,12 +190,10 @@
     padding: var(--space-6);
     cursor: pointer;
     transition: all var(--transition-base);
-    box-shadow: var(--shadow-sm);
 }
 
 .question-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
     border-color: var(--color-primary);
 }
 
