@@ -32,14 +32,21 @@ const DEFAULT_QUESTIONS = [
         question: "오늘 하루는 어땠나요?",
         date: "2025-12-11",
         category: "Daily",
-        answers: {} // Empty initially
+        answers: {} // Today: Empty
+    },
+    {
+        questionId: 4,
+        question: "가장 좋아하는 음식은?",
+        date: "2025-12-10",
+        category: "취향",
+        answers: { 1: "떡볶이!", 2: "삼겹살이지" } // Both answered
     },
     {
         questionId: 3,
         question: "함께 가고 싶은 여행지는?",
         date: "2025-12-09",
         category: "여행",
-        answers: { 2: "유럽 배낭여행!" } // Only User 2 answered
+        answers: { 1: "제주도 푸른 밤", 2: "유럽 배낭여행!" } // Both answered
     },
     {
         questionId: 2,

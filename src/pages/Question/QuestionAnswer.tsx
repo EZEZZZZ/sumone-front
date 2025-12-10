@@ -4,6 +4,7 @@ import Button from '../../components/common/Button';
 import Input from '../../components/common/Input';
 import { getQuestionDetail, answerQuestion } from '../../api/question';
 import { getMe } from '../../api/auth';
+import { getPartnerInfo } from '../../api/couple';
 import './QuestionAnswer.css';
 
 // Emotion options
@@ -46,9 +47,10 @@ const QuestionAnswer: React.FC = () => {
         const fetchData = async () => {
             try {
                 // Fetch from LocalStorage API
-                const [qData, uData] = await Promise.all([
+                const [qData, uData, pData] = await Promise.all([
                     getQuestionDetail(Number(id)),
-                    getMe()
+                    getMe(),
+                    getPartnerInfo()
                 ]);
 
                 if (qData) {
@@ -79,6 +81,11 @@ const QuestionAnswer: React.FC = () => {
                 if (uData) {
                     setUserName(uData.name);
                 }
+
+                if (pData) {
+                    setPartnerName(pData.name);
+                }
+
             } catch (e) {
                 console.error("Failed to fetch question detail", e);
             } finally {

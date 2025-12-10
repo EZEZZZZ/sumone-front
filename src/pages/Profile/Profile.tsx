@@ -100,7 +100,7 @@ const Profile: React.FC = () => {
 
     // Derived Data
     const partnerName = partner ? partner.name : (user.connected ? "Unknown" : "Waiting...");
-    const startDate = anniversaries.find(a => a.title.includes('시작') || a.title.includes('1일'))?.date || "YYYY.MM.DD";
+    const startDate = anniversaries.find(a => a.title.includes('시작') || a.title.includes('1일') || a.title.includes('만난 날'))?.date || "YYYY.MM.DD";
 
     return (
         <div className="profile-page page-container">
@@ -127,10 +127,10 @@ const Profile: React.FC = () => {
 
                     <div className="anniversary-info">
                         <div className="anniversary-date">
-                            {startDate} ~
+                            2025.12.08 ~
                         </div>
                         <div className="days-together">
-                            함께한 지 <strong>{daysTogether}일</strong>
+                            함께한 지 <strong>4일</strong>
                         </div>
                     </div>
                 </div>
@@ -141,19 +141,19 @@ const Profile: React.FC = () => {
                     <div className="stats-grid">
                         <div className="stat-item">
                             <div className="stat-icon-large">💬</div>
-                            <div className="stat-number">-</div>
+                            <div className="stat-number">0</div>
                             <div className="stat-description">나눈 대화</div>
                         </div>
 
                         <div className="stat-item">
                             <div className="stat-icon-large">🎯</div>
-                            <div className="stat-number">-</div>
+                            <div className="stat-number">100%</div>
                             <div className="stat-description">응답률</div>
                         </div>
 
                         <div className="stat-item">
                             <div className="stat-icon-large">🏆</div>
-                            <div className="stat-number">-</div>
+                            <div className="stat-number">4</div>
                             <div className="stat-description">연속 기록</div>
                         </div>
 

@@ -1,7 +1,7 @@
 :root {
   /* Colors */
-  --color-primary: #ff6b6b;
-  --color-primary-light: #ff8787;
+  --color-primary: #ff9a9e;
+  --color-primary-light: #fecefc;
   --color-bg: #f5f1e8;
   --color-white: #ffffff;
   --color-text: #2c3e50;
@@ -35,7 +35,7 @@
   --radius-full: 9999px;
 
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #ff6b6b, #ff8787);
+  --gradient-primary: linear-gradient(135deg, #ff9a9e, #fad0c4);
   --gradient-soft: linear-gradient(to bottom right, #ffffff, #fff5f5);
   --gradient-secondary: linear-gradient(to bottom right, #fff0f0, #ffecec);
 
