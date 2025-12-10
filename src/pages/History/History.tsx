@@ -103,7 +103,7 @@ const History: React.FC = () => {
                                 onClick={() => handleQuestionClick(question.questionId)}
                             >
                                 <span className="question-number">
-                                    {isSearchMode ? '•' : `#${String(historyQuestions.length - index).padStart(2, '0')}`}
+                                    {isSearchMode ? `#${question.questionId}` : `#${String(historyQuestions.length - index).padStart(2, '0')}`}
                                 </span>
                                 <div className="question-info">
                                     <span className="question-text">{question.question}</span>

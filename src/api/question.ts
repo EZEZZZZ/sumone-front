@@ -30,28 +30,28 @@ const DEFAULT_QUESTIONS = [
     {
         questionId: 100,
         question: "오늘 하루는 어땠나요?",
-        date: "2024-12-10",
+        date: "2025-12-11",
         category: "Daily",
         answers: {} // Empty initially
     },
     {
         questionId: 3,
         question: "함께 가고 싶은 여행지는?",
-        date: "2024-12-03",
+        date: "2025-12-09",
         category: "여행",
         answers: { 2: "유럽 배낭여행!" } // Only User 2 answered
     },
     {
         questionId: 2,
         question: "나의 첫인상은 어땠어?",
-        date: "2024-12-02",
+        date: "2025-12-08",
         category: "추억",
         answers: { 1: "차가워 보였는데 따뜻했어", 2: "눈이 예쁘다고 생각했어" }
     },
     {
         questionId: 1,
         question: "가장 좋아하는 계절은?",
-        date: "2024-12-01",
+        date: "2025-12-07",
         category: "취향",
         answers: { 1: "겨울! 눈이 좋거든", 2: "나는 여름! 물놀이가 좋아" }
     },

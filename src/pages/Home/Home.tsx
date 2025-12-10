@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import BottomNav from '../../components/BottomNav/BottomNav';
 import { getMe, User } from '../../api/auth';
+import { getPartnerInfo } from '../../api/couple';
 import { getTodayQuestion, Question } from '../../api/question';
 import { getTodayMission, Mission } from '../../api/mission';
-import { getAnniversaries, Anniversary } from '../../api/anniversary';
+import { getAnniversaries } from '../../api/anniversary';
 import './Home.css';
 
 const Home: React.FC = () => {
@@ -12,7 +13,7 @@ const Home: React.FC = () => {
 
     // State
     const [user, setUser] = useState<User | null>(null);
-    const [partnerName, setPartnerName] = useState<string>('짝꿍'); // Fallback
+    const [partnerName, setPartnerName] = useState<string>('짝꿍');
     const [daysTogether, setDaysTogether] = useState<number>(1);
     const [todayQuestion, setTodayQuestion] = useState<Question | null>(null);
     const [todayMission, setTodayMission] = useState<Mission | null>(null);
@@ -22,8 +23,9 @@ const Home: React.FC = () => {
         const fetchData = async () => {
             try {
                 // Parallel fetching
-                const [userData, questionData, missionData, anniversariesData] = await Promise.allSettled([
+                const [userData, partnerData, questionData, missionData, anniversariesData] = await Promise.allSettled([
                     getMe(),
+                    getPartnerInfo(),
                     getTodayQuestion(),
                     getTodayMission(),
                     getAnniversaries()
@@ -32,6 +34,11 @@ const Home: React.FC = () => {
                 // Handle User
                 if (userData.status === 'fulfilled' && userData.value) {
                     setUser(userData.value);
+                }
+
+                // Handle Partner
+                if (partnerData.status === 'fulfilled' && partnerData.value) {
+                    setPartnerName(partnerData.value.name);
                 }
 
                 // Handle Question
@@ -82,11 +89,18 @@ const Home: React.FC = () => {
         <div className="home-page page-container">
             <div className="home-header">
                 <div className="couple-profiles">
-                    <div className="profile-avatar">{user?.name?.[0] || 'Me'}</div>
+                    <div className="profile-group">
+                        <div className="profile-avatar">{user?.name?.[0] || 'Me'}</div>
+                        <div className="profile-name-label">{user?.name || '나'}</div>
+                    </div>
                     <div className="dday-counter">
                         <span className="dday-label">D+{daysTogether}</span>
+                        <div className="heart-icon">❤️</div>
                     </div>
-                    <div className="profile-avatar partner-avatar">{user?.connected ? '♥' : '?'}</div>
+                    <div className="profile-group">
+                        <div className="profile-avatar partner-avatar">{user?.connected ? (partnerName[0]) : '?'}</div>
+                        <div className="profile-name-label">{user?.connected ? partnerName : '짝꿍'}</div>
+                    </div>
                 </div>
                 {!user?.connected && (
                     <div className="connect-alert" onClick={() => navigate('/couple-connect')}>
@@ -131,16 +145,6 @@ const Home: React.FC = () => {
                                     <span className="badge-icon">{todayQuestion.answered ? '✓' : '◯'}</span>
                                     <span className="badge-text">{user?.name || '나'}</span>
                                 </div>
-                                {/* Partner status not explicit in todayQuestion API response from spec? 
-                                    Spec: question_id, question, date, answered (my answer).
-                                    Does not mention partner answer status for "today's question" endpoint specifically?
-                                    Actually "already assigned... same question".
-                                    The "Question Detail" has partner answer.
-                                    The "Today Question" spec says: question_id, question, date, answered.
-                                    It misses partnerAnswered info. 
-                                    I will omit partner status here or fetch detail if needed.
-                                    For now, ommit partner badge or make it gray.
-                                */}
                             </div>
                         </div>
                     ) : (

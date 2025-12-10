@@ -25,18 +25,18 @@ const QuestionAnswer: React.FC = () => {
     // Data States
     const [loading, setLoading] = useState(true);
     const [questionId, setQuestionId] = useState<number>(Number(id) || 0);
-    const [questionDate, setQuestionDate] = useState('2024.12.10');
+    const [questionDate, setQuestionDate] = useState('2025.12.11');
     const [questionTitle, setQuestionTitle] = useState('가장 좋아하는 계절은?');
     const [questionCategory, setQuestionCategory] = useState('취향');
 
-    const [userName, setUserName] = useState('철수');
+    const [userName, setUserName] = useState('이땡떙');
 
     // Answer States
-    const [myAnswer, setMyAnswer] = useState('저는 가을이 제일 좋아요. 시원하고 낭만적이거든요! 🍁');
+    const [myAnswer, setMyAnswer] = useState('난 다 좋다');
     const [isMyAnswerSubmitted, setIsMyAnswerSubmitted] = useState(true);
 
-    const [partnerName, setPartnerName] = useState('영희');
-    const [partnerAnswer, setPartnerAnswer] = useState('나는 봄이 좋아! 꽃이 피니까 🌸');
+    const [partnerName, setPartnerName] = useState('김땡떙');
+    const [partnerAnswer, setPartnerAnswer] = useState('안녕하세요 스프링 입니다.');
     const [isPartnerAnswerSubmitted, setIsPartnerAnswerSubmitted] = useState(true);
 
     const [showPartnerAnswer, setShowPartnerAnswer] = useState(false);
@@ -70,7 +70,10 @@ const QuestionAnswer: React.FC = () => {
                     // Init Partner Answer
                     if (qData.partnerAnswer) {
                         setPartnerAnswer(qData.partnerAnswer);
-                        setIsPartnerAnswerSubmitted(true);
+
+                        // Atomically determine submission status to prevent flickering
+                        const shouldHideForDemo = uData && uData.name === '이땡땡';
+                        setIsPartnerAnswerSubmitted(!shouldHideForDemo);
                     }
                 }
                 if (uData) {
@@ -101,6 +104,16 @@ const QuestionAnswer: React.FC = () => {
         try {
             await answerQuestion(questionId, myAnswer);
             alert('답변이 저장되었습니다.');
+
+            // Special Demo Logic for User 1 (이땡땡)
+            if (userName === '이땡땡') {
+                setTimeout(() => {
+                    setPartnerAnswer('쉽지않음');
+                    setIsPartnerAnswerSubmitted(true);
+                    alert('상대방의 답변이 도착했습니다!'); // Optional notification
+                }, 5000);
+            }
+
         } catch (e) {
             console.error('Failed to save answer', e);
         }
@@ -196,18 +209,26 @@ const QuestionAnswer: React.FC = () => {
                             </span>
                         </div>
 
-                        {bothSubmitted ? (
-                            showPartnerAnswer ? (
-                                <div className="answer-display answer-reveal">
-                                    <p>{partnerAnswer}</p>
-                                </div>
+                        {isPartnerAnswerSubmitted ? (
+                            bothSubmitted ? (
+                                showPartnerAnswer ? (
+                                    <div className="answer-display answer-reveal">
+                                        <p>{partnerAnswer}</p>
+                                    </div>
+                                ) : (
+                                    <div className="answer-locked">
+                                        <div className="lock-icon">🔒</div>
+                                        <p>상대방의 답변을 확인하시겠어요?</p>
+                                        <Button variant="gradient" onClick={handleRevealAnswer}>
+                                            답변 보기
+                                        </Button>
+                                    </div>
+                                )
                             ) : (
                                 <div className="answer-locked">
-                                    <div className="lock-icon">🔒</div>
-                                    <p>상대방의 답변을 확인하시겠어요?</p>
-                                    <Button variant="gradient" onClick={handleRevealAnswer}>
-                                        답변 보기
-                                    </Button>
+                                    <div className="lock-icon">🎁</div>
+                                    <p>상대방의 답변이 도착했습니다!</p>
+                                    <p className="sub-text">내 답변을 작성하면 확인할 수 있어요.</p>
                                 </div>
                             )
                         ) : (

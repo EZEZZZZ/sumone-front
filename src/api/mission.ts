@@ -18,10 +18,10 @@ export interface MissionHistoryItem extends Mission { }
 const STORAGE_KEY = 'sumone_missions_v2';
 
 const DEFAULT_MISSIONS = [
-    { missionId: 4, title: "포옹 30초 이상 하기", type: 'ACTION', date: "2024-12-10", performedBy: { 1: false, 2: false } },
-    { missionId: 3, title: "함께 요리하기", type: 'ACTION', date: "2024-12-03", performedBy: { 1: false, 2: true } },
-    { missionId: 2, title: "서로 칭찬 3가지 해주기", type: 'QUESTION', date: "2024-12-02", performedBy: { 1: true, 2: false } },
-    { missionId: 1, title: "손잡고 산책하기", type: 'ACTION', date: "2024-12-01", performedBy: { 1: true, 2: true } },
+    { missionId: 4, title: "포옹 30초 이상 하기", type: 'ACTION', date: "2025-12-11", performedBy: { 1: false, 2: false } },
+    { missionId: 3, title: "함께 요리하기", type: 'ACTION', date: "2025-12-10", performedBy: { 1: false, 2: true } },
+    { missionId: 2, title: "서로 칭찬 3가지 해주기", type: 'QUESTION', date: "2025-12-09", performedBy: { 1: true, 2: false } },
+    { missionId: 1, title: "손잡고 산책하기", type: 'ACTION', date: "2025-12-08", performedBy: { 1: true, 2: true } },
 ];
 
 const loadRawData = (): any[] => {

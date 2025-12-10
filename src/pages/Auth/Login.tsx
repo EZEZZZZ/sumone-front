@@ -35,7 +35,7 @@ const Login: React.FC = () => {
             <div className="login-content">
                 <div className="logo-area">
                     <div className="logo-placeholder">💕</div>
-                    <h1 className="app-title">SumOne</h1>
+                    <h1 className="app-title">SumTwo</h1>
                     <p className="app-subtitle">우리만의 특별한 기록</p>
                 </div>
 

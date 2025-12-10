@@ -114,7 +114,9 @@ const MissionPage: React.FC = () => {
                                     <div className="history-date">{item.date}</div>
                                     <div className="history-info">
                                         <span className="history-title">{item.title}</span>
-                                        <span className="history-status">{item.performed ? '성공' : '실패'}</span>
+                                        <span className="history-status">
+                                            {item.performed && item.partnerPerformed ? '성공' : '진행중'}
+                                        </span>
                                     </div>
                                 </div>
                             ))

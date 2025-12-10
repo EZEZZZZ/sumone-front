@@ -11,8 +11,8 @@ export interface Anniversary {
 const STORAGE_KEY = 'sumone_anniversaries';
 
 const DEFAULT_ANNIVERSARIES: Anniversary[] = [
-    { anniversaryId: 1, title: "우리가 만난 날", date: "2024-01-01", repeat: true },
-    { anniversaryId: 2, title: "발렌타인데이", date: "2024-02-14", repeat: true },
+    { anniversaryId: 1, title: "우리가 만난 날", date: "2025-12-09", repeat: true },
+    { anniversaryId: 2, title: "크리스마스", date: "2025-12-25", repeat: true },
 ];
 
 const loadData = (): Anniversary[] => {
