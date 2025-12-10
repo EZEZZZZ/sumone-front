@@ -1,32 +1,74 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/common/Button';
 import Input from '../../components/common/Input';
+import { generateCoupleCode, connectCouple } from '../../api/couple';
 import './CoupleConnect.css';
 
 const CoupleConnect: React.FC = () => {
     const navigate = useNavigate();
     const [mode, setMode] = useState<'choose' | 'share' | 'enter'>('choose');
-    const [inviteCode] = useState('LOVE2024');
+    const [inviteCode, setInviteCode] = useState<string>('');
     const [enteredCode, setEnteredCode] = useState('');
     const [connecting, setConnecting] = useState(false);
     const [connected, setConnected] = useState(false);
+    const [error, setError] = useState<string | null>(null);
 
-    const handleConnect = () => {
+    // Fetch code when entering share mode
+    useEffect(() => {
+        if (mode === 'share' && !inviteCode) {
+            const fetchCode = async () => {
+                try {
+                    const data = await generateCoupleCode();
+                    setInviteCode(data.code);
+                } catch (err: any) {
+                    // If 409, it means already connected or code exists? 
+                    // Spec says 409: "Already connected". 
+                    // If code exists, spec says it might return existing code. 
+                    // If 409, we should check if already connected.
+                    console.error('Failed to generate code', err);
+                    if (err.response?.status === 409) {
+                        alert('이미 커플이 연결되어 있습니다.');
+                        navigate('/home');
+                    } else {
+                        setError('코드 생성 실패. 다시 시도해주세요.');
+                    }
+                }
+            };
+            fetchCode();
+        }
+    }, [mode, inviteCode, navigate]);
+
+    const handleConnect = async () => {
+        if (!enteredCode.trim()) return;
         setConnecting(true);
-        // Mock connection
-        setTimeout(() => {
-            setConnecting(false);
+        setError(null);
+        try {
+            await connectCouple(enteredCode);
             setConnected(true);
             setTimeout(() => {
                 navigate('/home');
             }, 2000);
-        }, 1500);
+        } catch (err: any) {
+            console.error('Connection failed', err);
+            if (err.response?.status === 400 || err.response?.status === 404) {
+                setError('유효하지 않은 코드입니다.');
+            } else if (err.response?.status === 409) {
+                setError('이미 커플이 연결되어 있습니다.');
+            } else {
+                setError('연결 실패. 다시 시도해주세요.');
+            }
+            setConnecting(false);
+        }
     };
 
-    const handleCopyCode = () => {
-        navigator.clipboard.writeText(inviteCode);
-        alert('초대 코드가 복사되었습니다!');
+    const handleCopyCode = async () => {
+        try {
+            await navigator.clipboard.writeText(inviteCode);
+            alert('초대 코드가 복사되었습니다!');
+        } catch (err) {
+            console.error('Copy failed', err);
+        }
     };
 
     if (connected) {
@@ -80,9 +122,14 @@ const CoupleConnect: React.FC = () => {
                         <div className="code-display">
                             <p className="code-label">내 초대 코드</p>
                             <div className="code-box">
-                                <span className="code-text">{inviteCode}</span>
+                                {inviteCode ? (
+                                    <span className="code-text">{inviteCode}</span>
+                                ) : (
+                                    <span className="code-loading">생성 중...</span>
+                                )}
                             </div>
-                            <Button variant="secondary" fullWidth onClick={handleCopyCode}>
+                            {error && <p className="error-message">{error}</p>}
+                            <Button variant="secondary" fullWidth onClick={handleCopyCode} disabled={!inviteCode}>
                                 코드 복사하기
                             </Button>
                         </div>
@@ -102,11 +149,12 @@ const CoupleConnect: React.FC = () => {
                     <div className="connect-mode">
                         <Input
                             label="초대 코드"
-                            placeholder="XXXXXXXX"
+                            placeholder="6자리 코드 입력"
                             value={enteredCode}
-                            onChange={(e) => setEnteredCode(e.target.value)}
+                            onChange={(e) => setEnteredCode(e.target.value.toUpperCase())}
                             maxLength={8}
                         />
+                        {error && <p className="error-text" style={{ color: 'var(--color-error)', fontSize: '0.875rem', marginTop: '0.5rem' }}>{error}</p>}
 
                         <Button
                             variant="gradient"
@@ -114,7 +162,7 @@ const CoupleConnect: React.FC = () => {
                             fullWidth
                             onClick={handleConnect}
                             loading={connecting}
-                            disabled={enteredCode.length < 8}
+                            disabled={enteredCode.length < 4}
                         >
                             연결하기
                         </Button>

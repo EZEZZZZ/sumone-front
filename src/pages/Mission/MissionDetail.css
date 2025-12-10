@@ -1,0 +1,131 @@
+.mission-title-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+    border: 1px solid var(--color-border);
+}
+
+.mission-title-card.clear-glow {
+    border: 2px solid var(--color-primary);
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.2);
+}
+
+.mission-type {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    margin-bottom: 0.5rem;
+}
+
+.mission-title-card h2 {
+    font-family: 'Gamja Flower', cursive;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+}
+
+.mission-date {
+    font-size: 0.9rem;
+    color: var(--color-text-lighter);
+}
+
+.status-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+}
+
+.status-box {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    text-align: center;
+    width: 45%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.status-box.done {
+    background: #fff5f5;
+    border: 1px solid var(--color-primary-light);
+}
+
+.status-box .avatar {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--color-text-light);
+}
+
+.status-box .mark {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.status-box .label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--color-text-light);
+}
+
+.status-box.done .label {
+    color: var(--color-primary);
+}
+
+.vs-divider {
+    font-size: 1.5rem;
+}
+
+.clear-celebration {
+    text-align: center;
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.clear-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--color-primary), #ff8787);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+.clear-celebration p {
+    color: var(--color-text-light);
+    line-height: 1.5;
+}
+
+.detail-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    color: var(--color-text-light);
+    cursor: pointer;
+    padding: 0;
+    margin-right: 1rem;
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
