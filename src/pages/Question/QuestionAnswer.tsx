@@ -116,10 +116,10 @@ const QuestionAnswer: React.FC = () => {
             // Special Demo Logic for User 1 (이땡땡)
             if (userName === '이땡땡') {
                 setTimeout(() => {
-                    setPartnerAnswer('쉽지않음');
+                    setPartnerAnswer('안녕하세요 스프링입니다.');
                     setIsPartnerAnswerSubmitted(true);
                     alert('상대방의 답변이 도착했습니다!'); // Optional notification
-                }, 5000);
+                }, 100);
             }
 
         } catch (e) {

@@ -58,7 +58,7 @@ const MissionPage: React.FC = () => {
     return (
         <div className="mission-page page-container">
             <div className="mission-header">
-                <h1>오늘의 미션</h1>
+                <h1>Mission</h1>
                 <p className="mission-subtitle">매일매일 새로운 추억 만들기</p>
             </div>
 

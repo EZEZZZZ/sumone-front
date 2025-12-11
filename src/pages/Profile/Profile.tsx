@@ -69,19 +69,8 @@ const Profile: React.FC = () => {
         }
     };
 
-    const handleAddAnniversary = async () => {
-        const title = prompt('기념일 이름을 입력하세요 (예: 사귄 날)');
-        if (!title) return;
-        const date = prompt('날짜를 입력하세요 (YYYY-MM-DD)');
-        if (!date) return;
-
-        try {
-            await addAnniversary({ title, date, repeat: true });
-            alert('기념일이 추가되었습니다.');
-            fetchData();
-        } catch (e) {
-            alert('기념일 추가 실패');
-        }
+    const handleAddAnniversary = () => {
+        navigate('/anniversary/add');
     };
 
     const handleDeleteAnniversary = async (id: number) => {
@@ -190,11 +179,6 @@ const Profile: React.FC = () => {
                 </div>
 
                 <div className="profile-actions">
-                    <button className="action-btn premium-btn">
-                        <span className="btn-icon">👑</span>
-                        <span>프리미엄 업그레이드</span>
-                    </button>
-
                     <button className="action-btn logout-btn" onClick={handleLogout}>
                         <span>로그아웃</span>
                     </button>

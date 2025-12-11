@@ -1,0 +1,90 @@
+.add-anniversary-page {
+    min-height: 100vh;
+    background-color: #F5F1E8;
+}
+
+.anniversary-header {
+    display: flex;
+    align-items: center;
+    padding: var(--space-4);
+    margin-bottom: var(--space-6);
+    position: relative;
+}
+
+.anniversary-header h1 {
+    font-family: 'Brush Script MT', cursive, sans-serif;
+    font-size: 2rem;
+    color: #2c3e50;
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.back-button {
+    background: none;
+    border: none;
+    font-size: var(--text-base);
+    color: var(--color-gray-700);
+    font-weight: var(--font-medium);
+    padding: var(--space-2);
+    cursor: pointer;
+    transition: color var(--transition-fast);
+}
+
+.back-button:hover {
+    color: var(--color-primary);
+}
+
+.anniversary-form {
+    padding: 0 var(--space-4);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-section {
+    margin-bottom: var(--space-6);
+}
+
+.form-label {
+    display: block;
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-3);
+}
+
+.checkbox-section {
+    background: var(--color-white);
+    padding: var(--space-4);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-border);
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    cursor: pointer;
+    font-size: var(--text-base);
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+.checkbox-input {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--color-primary);
+}
+
+.checkbox-description {
+    font-size: var(--text-sm);
+    color: var(--color-gray-500);
+    margin: var(--space-2) 0 0 30px;
+}
+
+.form-actions {
+    margin-top: var(--space-8);
+    padding-bottom: var(--space-6);
+}

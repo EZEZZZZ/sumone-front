@@ -6,8 +6,9 @@ import Home from './pages/Home/Home';
 import QuestionAnswer from './pages/Question/QuestionAnswer';
 import History from './pages/History/History';
 import MissionPage from './pages/Mission/Mission';
-import MissionDetail from './pages/Mission/MissionDetail'; // Import ensured
+import MissionDetail from './pages/Mission/MissionDetail';
 import Profile from './pages/Profile/Profile';
+import AddAnniversary from './pages/Anniversary/AddAnniversary';
 import './App.css';
 
 // Component to handle global auth logic
@@ -47,6 +48,7 @@ const App: React.FC = () => {
         <Route path="/missions" element={<MissionPage />} />
         <Route path="/mission/:id" element={<MissionDetail />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/anniversary/add" element={<AddAnniversary />} />
 
         {/* Fallback */}
         <Route path="*" element={<Navigate to="/" replace />} />
