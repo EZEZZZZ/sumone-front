@@ -14,7 +14,7 @@ const Home: React.FC = () => {
     // State
     const [user, setUser] = useState<User | null>(null);
     const [partnerName, setPartnerName] = useState<string>('짝꿍');
-    const [daysTogether, setDaysTogether] = useState<number>(1);
+    const [daysTogether, setDaysTogether] = useState<number>(4);
     const [todayQuestion, setTodayQuestion] = useState<Question | null>(null);
     const [todayMission, setTodayMission] = useState<Mission | null>(null);
     const [loading, setLoading] = useState(true);
@@ -53,7 +53,7 @@ const Home: React.FC = () => {
 
                 // Handle Anniversaries (to find D-Day)
                 if (anniversariesData.status === 'fulfilled' && Array.isArray(anniversariesData.value)) {
-                    const startAnniversary = anniversariesData.value.find(a => a.title && (a.title.includes('1일') || a.title.includes('시작')));
+                    const startAnniversary = anniversariesData.value.find(a => a.title && (a.title.includes('4일') || a.title.includes('시작')));
                     if (startAnniversary) {
                         const startDate = new Date(startAnniversary.date);
                         const today = new Date();
