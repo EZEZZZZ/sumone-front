@@ -71,15 +71,22 @@ const History: React.FC = () => {
         <div className="history-page page-container">
             <div className="history-header">
                 {isSearchMode ? (
-                    <div className="search-bar-wrapper" style={{ width: '100%', display: 'flex', gap: '8px' }}>
-                        <Input
+                    <div className="search-mode-header">
+                        <input
+                            type="text"
+                            className="search-input"
                             placeholder="질문 검색..."
                             value={keyword}
                             onChange={(e) => setKeyword(e.target.value)}
                             onKeyPress={handleKeyPress}
-                            style={{ marginBottom: 0 }}
+                            autoFocus
                         />
-                        <button onClick={toggleSearch} style={{ whiteSpace: 'nowrap', fontSize: '0.9rem' }}>취소</button>
+                        <button
+                            onClick={toggleSearch}
+                            className="search-cancel-btn"
+                        >
+                            취소
+                        </button>
                     </div>
                 ) : (
                     <>

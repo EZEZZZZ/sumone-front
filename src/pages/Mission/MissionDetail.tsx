@@ -72,7 +72,7 @@ const MissionDetail: React.FC = () => {
                     <div className="clear-celebration">
                         <div className="clear-badge">MISSION CLEAR! 🎉</div>
                         <p>두 분 모두 미션을 완수하셨군요!</p>
-                        <p>사랑 지수가 +10 상승했습니다 💕</p>
+                        <p>조약돌 10개를 드려요 💕</p>
                     </div>
                 ) : (
                     <div className="pending-notice">

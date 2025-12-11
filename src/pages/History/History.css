@@ -28,6 +28,49 @@
     cursor: pointer;
 }
 
+/* Search Mode Styles */
+.search-mode-header {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.search-input {
+    flex: 1;
+    padding: 12px 16px;
+    font-size: 1rem;
+    color: #2c3e50;
+    background: var(--color-white);
+    border: 2px solid #dfe6e9;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.search-input:focus {
+    border-color: var(--color-primary);
+    outline: none;
+}
+
+.search-cancel-btn {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #2c3e50;
+    background: var(--color-white);
+    border: 2px solid #dfe6e9;
+    border-radius: 12px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.search-cancel-btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+
 .question-list {
     padding: var(--space-4);
     display: flex;
