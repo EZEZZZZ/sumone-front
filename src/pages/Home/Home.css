@@ -232,3 +232,38 @@
         transform: translateY(-5px);
     }
 }
+
+/* Pet Section - 60% of viewport */
+.pet-section {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: var(--space-4);
+}
+
+/* Floating Dog */
+.floating-dog {
+    font-size: 120px;
+    animation: float 3s ease-in-out infinite;
+    opacity: 0.6;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Ensure content has proper spacing */
+.home-content {
+    position: relative;
+    z-index: 1;
+}

@@ -147,7 +147,7 @@ const Profile: React.FC = () => {
 
                         <div className="stat-item">
                             <div className="stat-icon-large">🎯</div>
-                            <div className="stat-number">100%</div>
+                            <div className="stat-number">{localStorage.getItem('sumone_fake_response_rate') || '96%'}</div>
                             <div className="stat-description">응답률</div>
                         </div>
 

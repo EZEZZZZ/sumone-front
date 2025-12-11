@@ -110,6 +110,7 @@ const QuestionAnswer: React.FC = () => {
         // Persist to LocalStorage
         try {
             await answerQuestion(questionId, myAnswer);
+            localStorage.setItem('sumone_fake_response_rate', '100%'); // Fake 100% on answer
             alert('답변이 저장되었습니다.');
 
             // Special Demo Logic for User 1 (이땡땡)

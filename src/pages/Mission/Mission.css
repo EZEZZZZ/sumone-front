@@ -92,22 +92,27 @@
     background: var(--color-gray-100);
 }
 
-.history-date {
-    font-size: var(--text-sm);
-    color: var(--color-gray-500);
-    min-width: 80px;
-}
-
 .history-info {
     flex: 1;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    /* Align Date/Status to right, Title expands */
     align-items: center;
+    gap: var(--space-3);
 }
 
 .history-title {
+    flex: 1;
+    /* Title takes remaining space */
     font-weight: var(--font-medium);
     color: var(--color-gray-900);
+    text-align: left;
+}
+
+.history-date {
+    font-size: var(--text-sm);
+    color: var(--color-gray-500);
+    white-space: nowrap;
 }
 
 .history-status {

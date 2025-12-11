@@ -76,12 +76,13 @@
 }
 
 .btn-gradient {
-    background: var(--gradient-primary);
+    background: var(--color-primary);
     color: var(--color-white);
 }
 
 .btn-gradient:hover:not(:disabled) {
     transform: translateY(-2px);
+    opacity: 0.9;
 }
 
 .btn-gradient:active:not(:disabled) {

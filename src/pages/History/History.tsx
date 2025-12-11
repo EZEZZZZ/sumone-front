@@ -107,7 +107,7 @@ const History: React.FC = () => {
                                 </span>
                                 <div className="question-info">
                                     <span className="question-text">{question.question}</span>
-                                    <span className="question-date-sm">{question.date}</span>
+                                    <span className="question-date-sm">{question.date.split('-').slice(1).join('/')}</span>
                                 </div>
                                 <span className="status-dot">{question.answered ? '✓' : ''}</span>
                             </div>

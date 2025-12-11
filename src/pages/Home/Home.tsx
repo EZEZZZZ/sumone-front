@@ -109,27 +109,12 @@ const Home: React.FC = () => {
                 )}
             </div>
 
+            {/* Pet Section - 60% */}
+            <div className="pet-section">
+                <div className="floating-dog">🐶</div>
+            </div>
+
             <div className="home-content">
-                {/* Mission Summary / Widget */}
-                <div className="mission-widget-section" onClick={handleMissionClick}>
-                    <div className="section-header">
-                        <h2>오늘의 미션</h2>
-                    </div>
-
-                    <div className="mission-card-preview">
-                        {todayMission ? (
-                            <>
-                                <div className="mission-preview-title">{todayMission.title}</div>
-                                <div className={`mission-status-badge ${todayMission.performed ? 'done' : 'pending'}`}>
-                                    {todayMission.performed ? '완료함 ✅' : '도전하기 👉'}
-                                </div>
-                            </>
-                        ) : (
-                            <p className="no-mission-text">오늘의 미션이 없습니다.</p>
-                        )}
-                    </div>
-                </div>
-
                 {/* Today Question */}
                 <div className="today-question-section">
                     <div className="section-header">
@@ -152,6 +137,26 @@ const Home: React.FC = () => {
                             <p>오늘의 질문이 준비되지 않았습니다.</p>
                         </div>
                     )}
+                </div>
+
+                {/* Mission Summary / Widget */}
+                <div className="mission-widget-section" onClick={handleMissionClick}>
+                    <div className="section-header">
+                        <h2>오늘의 미션</h2>
+                    </div>
+
+                    <div className="mission-card-preview">
+                        {todayMission ? (
+                            <>
+                                <div className="mission-preview-title">{todayMission.title}</div>
+                                <div className={`mission-status-badge ${todayMission.performed ? 'done' : 'pending'}`}>
+                                    {todayMission.performed ? '✅' : '도전 👉'}
+                                </div>
+                            </>
+                        ) : (
+                            <p className="no-mission-text">오늘의 미션이 없습니다.</p>
+                        )}
+                    </div>
                 </div>
             </div>
 
