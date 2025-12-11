@@ -85,7 +85,8 @@ button {
 
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Noto+Sans+KR:wght@400;500;700&display=swap');
+@import url('//fonts.googleapis.com/earlyaccess/nanummyeongjo.css');
 
 body {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Nanum Myeongjo', serif;
 }
